@@ -1,6 +1,7 @@
 ## LAB Assignment 5: Command Pattern
 Marasigan, Vem Aiensi A. <br>
-3BSCS-1 | CSL311
+3BSCS-1 | CSL311 <br>
+## <a href = "https://github.com/VemAiensi/SoftEng1/blob/main/RunCode/HowToRunCodeIntelliJ.md">HowToRun</a>
 
 #### Problem Statement
 Smart Home Automation
