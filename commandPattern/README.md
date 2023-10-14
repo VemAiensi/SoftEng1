@@ -21,4 +21,4 @@ Your challenge is to apply a design pattern that provides a flexible and scalabl
 <br>
 
 #### UML Diagram
-![](CommandDesignPatternDiagram.png)
+![](UMLDiagram.png)
