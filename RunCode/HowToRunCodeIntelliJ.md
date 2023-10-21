@@ -1,4 +1,13 @@
 ## Tutorial on Running a Program on IntelliJ
+JDKs are sometimes not automatically configured by IntelliJ IDE and may require you to configure it manually.<br>
+Here's How:
+
+#### Option 1
+* If a "Project JDK is not defined" message is shown, click Setup JDK
+![](1 new.png)
+* Select the installed JDK and its done.
+
+#### Option 2
 * Download the source code and open project in IDE<br>
 * Look for "out" directory and find the main class<br>
 ![](https://github.com/VemAiensi/SoftEng1/blob/main/RunCode/factory01.png) <br>
