@@ -37,4 +37,6 @@ Marasigan, Vem Aiensi A. <br>
 ### UML Diagram
 ![](UMLDiagram.png)
 
-
+### Sample Output
+![](resultPage1.png)
+![](resultPage2.png)
