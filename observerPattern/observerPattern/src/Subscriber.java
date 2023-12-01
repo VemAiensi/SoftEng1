@@ -1,4 +1,4 @@
-public class Subscriber {
+public class Subscriber implements SubscriberObserver{
     
     private String subscriberName;
 
@@ -8,5 +8,11 @@ public class Subscriber {
 
     public String getSubscriberName(){
         return subscriberName;
+    }
+
+    @Override
+    public void update(NewsAgency news) {
+       
+        
     }
 }
