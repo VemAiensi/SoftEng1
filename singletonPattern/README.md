@@ -19,5 +19,4 @@ In your solution you must provide the following in your Github link account:
 ![](UMLDiagram.png)
 
 ### Sample Output
-![](resultPage1.png)
-![](resultPage2.png)
+![](resultPage.png)
