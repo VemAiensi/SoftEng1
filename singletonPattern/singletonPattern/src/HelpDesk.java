@@ -32,7 +32,7 @@ public class HelpDesk {
             System.out.println(this.individual.getName() + " is now processing his/her inquiry.");
         }
         else{
-            System.out.println("Another individual is still inquiring.\n"+ individual.getName() +" is wait for your turn.");          
+            System.out.println("Another individual is still inquiring.\n"+ individual.getName() +" is waiting for his/her turn.");          
             enQueue(individual);
             System.out.println(individual.getName() + "'s queue number is [" + queue.size() + "]");
         }
