@@ -16,7 +16,7 @@ This approach aims to maintain an organized queuing process for individuals visi
 In your solution you must provide the following in your Github link account:
 
 ### UML Diagram
-![](UMLDiagram.png)
+![](UMLDiagram.svg)
 
 ### Sample Output
 ![](resultPage.png)
