@@ -1,73 +1,92 @@
+import java.util.ArrayList;
+
 public class QueueMonitoring {
     public static void main(String[] args){
+
         //Creeation of 3 help desk
-        HelpDesk hD1 = new HelpDesk("Help Desk 1").getInstance("Help Desk 1");
-        HelpDesk hD2 = new HelpDesk("Help Desk 2").getInstance("Help Desk 2");
-        HelpDesk hD3 = new HelpDesk("Help Desk 3").getInstance("Help Desk 3");
+        HelpDesk hD1 = new HelpDesk("Help Desk 1");
+        HelpDesk hD2 = new HelpDesk("Help Desk 2");
+        HelpDesk hD3 = new HelpDesk("Help Desk 3");
+        ArrayList <HelpDesk> helpDesks = new ArrayList<>();
+        helpDesks.add(hD1);
+        helpDesks.add(hD2);
+        helpDesks.add(hD3);
+
+        //Queue
+        Queue queue = Queue.getInstance();
+        queue.enQueue(new Individual("Vem"));
+        queue.enQueue(new Individual("Syd"));
+        queue.enQueue(new Individual("Ronnie"));
+        queue.enQueue(new Individual("Emman"));
+        queue.enQueue(new Individual("AC"));
+        queue.enQueue(new Individual("Earl"));
+
 
         System.out.println("\t\t-Welcome to Pag-ibig Office-");
         System.out.println("Feel free to inquire in our in our available Help Desks\n");
 
         //process an individual at help desk 1
-        hD1.process(new Individual("Vem"));
+        helpDesks.get(0).process(queue.process());
 
         //process an individual at help desk 2
-        hD2.process(new Individual("Syd"));
+        helpDesks.get(1).process(queue.process());
 
         //process an individual at help desk 3
-        hD3.process(new Individual("Ronnie"));
+        helpDesks.get(2).process(queue.process());
 
-        //a group of people went at help desk 1
-        hD1.process(new Individual("Emman"));
-        hD1.process(new Individual("Angelo"));
-        hD1.process(new Individual("Ian"));
 
-        //an individual along with his gf decided to 
-        //split in help desks with short queue
-        hD2.process(new Individual("Earl"));
-        hD3.process(new Individual("Dina"));
+        //queue monitor checked the queue
+        queue.displayQueue(helpDesks);
 
-        //queue monitor checked the queue of all help Desks
-        hD1.displayQueue();
-        hD2.displayQueue();
-        hD3.displayQueue();
+        //end process of an individual at help desk 1
+        helpDesks.get(0).endProcess();
 
-        //2 indviduals finished their transaction at help desk 2 and 3
-        hD2.endProcess();
-        hD3.endProcess();
+        //end process of an individual at help desk 2
+        helpDesks.get(1).endProcess();
 
-        //emman along with his friends decided to 
-        //split in different available helpdesk
-        //because the individual in help desk 1 is taking too long
-        hD2.process(new Individual("Emman"));
-        hD2.process(new Individual("Ian"));
-        hD3.process(new Individual("Angelo"));
+        //end process of an individual at help desk 3
+        helpDesks.get(2).endProcess();
 
-        //queue monitor checked the queue of all help Desks
-        hD1.displayQueue();
-        hD2.displayQueue();
-        hD3.displayQueue();
 
-        //the monitor saw the there were queue changes as
-        //individuals went to other help desks
-        //then decides to reset the queue in help desk 1
-        hD1.resetQueue();
+        queue.displayQueue(helpDesks);
 
-        //queue monitor checked the queue of all help Desks
-        hD1.displayQueue();
-        hD2.displayQueue();
-        hD3.displayQueue();
+        //process an individual at help desk 1
+        helpDesks.get(0).process(queue.process());
 
-        //inquiries are processed fast in most of the help desk
-        hD2.endProcess();
-        hD3.endProcess();
-        hD2.endProcess();
-        hD3.endProcess();
-        hD2.endProcess();
+        //process an individual at help desk 2
+        helpDesks.get(1).process(queue.process());
 
-        //Vem finished his inquiry but was still disappointed
-        hD1.endProcess();
+        //process an individual at help desk 3
+        helpDesks.get(2).process(queue.process());
 
+        queue.displayQueue(helpDesks);
+
+        //sample problem: the queue was not updated
+        queue.enQueue(new Individual("Vem"));
+        queue.enQueue(new Individual("Syd"));
+        queue.enQueue(new Individual("Ronnie"));
+        queue.enQueue(new Individual("Emman"));
+        queue.enQueue(new Individual("AC"));
+        queue.enQueue(new Individual("Earl"));
+        queue.displayQueue(helpDesks);
+
+        //reseting the queue
+        queue.resetQueue();
+
+        //test if it works
+        queue.displayQueue(helpDesks);
+
+        //end process of an individual at help desk 1
+        helpDesks.get(0).endProcess();
+
+        //end process of an individual at help desk 2
+        helpDesks.get(1).endProcess();
+
+        //end process of an individual at help desk 3
+        helpDesks.get(2).endProcess();
+
+        queue.displayQueue(helpDesks);
+        
         System.out.println("\n\t-------[ Singleton Pattern ]-------\n" +
                 "\tby Marasigan, Vem Aiensi : 3BSCS-1\n");
     }
